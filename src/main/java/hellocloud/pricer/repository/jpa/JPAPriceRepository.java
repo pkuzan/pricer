@@ -17,7 +17,7 @@ public class JPAPriceRepository implements PriceRepository {
 
     @Override
     public Price get(String symbol) {
-        PriceEntity entity = priceCrudRepository.findOne(symbol);
+        PriceEntity entity = priceCrudRepository.findById(symbol).get();
         return null == entity ? null : entity.toPrice();
     }
 
@@ -40,6 +40,6 @@ public class JPAPriceRepository implements PriceRepository {
 
     @Override
     public void delete(String symbol) {
-        priceCrudRepository.delete(symbol);
+        priceCrudRepository.deleteById(symbol);
     }
 }
