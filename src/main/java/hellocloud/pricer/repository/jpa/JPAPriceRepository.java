@@ -17,8 +17,7 @@ public class JPAPriceRepository implements PriceRepository {
 
     @Override
     public Price get(String symbol) {
-        PriceEntity entity = priceCrudRepository.findById(symbol).orElse(null);
-        return null == entity ? null : entity.toPrice();
+        return priceCrudRepository.findById(symbol).map(PriceEntity::toPrice).orElse(null);
     }
 
     @Override
