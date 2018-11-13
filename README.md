@@ -12,4 +12,3 @@ Containing:
 The application will start on port 8080 by default.  
 The Swagger UI can be accessed at `http://localhost:8080/swagger-ui.html`
 
-`
